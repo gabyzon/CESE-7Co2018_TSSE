@@ -35,7 +35,7 @@ char* GlobalOrderError;
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_inicializa_rtc(void);
+extern void test_inicializa_leds(void);
 
 
 /*=======Suite Setup=====*/
@@ -70,7 +70,7 @@ int main(void)
 {
   suite_setup();
   UnityBegin("test_tp3.c");
-  RUN_TEST(test_inicializa_rtc, 4);
+  RUN_TEST(test_inicializa_leds, 4);
 
   return suite_teardown(UnityEnd());
 }
