@@ -1,0 +1,17 @@
+---
+:source:
+  :path: test
+  :file: test_tp3.c
+:successes: []
+:failures:
+- :test: test_inicializa_rtc
+  :line: 5
+  :message: Falla apropositosito
+:ignores: []
+:counts:
+  :total: 1
+  :passed: 0
+  :failed: 1
+  :ignored: 0
+:stdout: []
+:time: 0.0010041900004580384
