@@ -31,7 +31,7 @@ _Bool
 
 
 
- value = rtc_virtual_inicia(1);
+ value = rtc_virtual_inicia(1, &puerto_virtual);
 
  UnityAssertEqualNumber((UNITY_INT)((1)), (UNITY_INT)((value)), (
 
@@ -41,12 +41,42 @@ _Bool
 
 
 
- value = rtc_virtual_inicia(2);
+ value = rtc_virtual_inicia(2, &puerto_virtual);
 
  UnityAssertEqualNumber((UNITY_INT)((0)), (UNITY_INT)((value)), (
 
 ((void *)0)
 
 ), (UNITY_UINT)(18), UNITY_DISPLAY_STYLE_INT);
+
+}
+
+
+
+void test_leds_de_inicio(void){
+
+ uint16_t puerto_virtual = 0x0000;
+
+ 
+
+_Bool 
+
+     value=0;
+
+
+
+ value = rtc_virtual_inicia(1, &puerto_virtual);
+
+ UnityAssertEqualNumber((UNITY_INT)((0x0001)), (UNITY_INT)((puerto_virtual)), (
+
+((void *)0)
+
+), (UNITY_UINT)(26), UNITY_DISPLAY_STYLE_INT);
+
+
+
+
+
+
 
 }

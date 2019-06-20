@@ -6,7 +6,7 @@ void leds_inicia(uint16_t * puerto){
 }
 
 
-bool rtc_virtual_inicia(uint8_t estado){
+bool rtc_virtual_inicia(uint8_t estado, uint16_t * puerto){
 
 	bool val;
 	

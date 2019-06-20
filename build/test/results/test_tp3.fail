@@ -9,12 +9,15 @@
 - :test: test_inicializa_rtc
   :line: 10
   :message: ''
-:failures: []
+:failures:
+- :test: test_leds_de_inicio
+  :line: 26
+  :message: Expected 1 Was 0
 :ignores: []
 :counts:
-  :total: 2
+  :total: 3
   :passed: 2
-  :failed: 0
+  :failed: 1
   :ignored: 0
 :stdout: []
-:time: 0.0015561960026388988
+:time: 0.007268920999194961

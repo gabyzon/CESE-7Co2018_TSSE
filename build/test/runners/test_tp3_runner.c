@@ -37,6 +37,7 @@ extern void setUp(void);
 extern void tearDown(void);
 extern void test_inicializa_leds(void);
 extern void test_inicializa_rtc(void);
+extern void test_leds_de_inicio(void);
 
 
 /*=======Suite Setup=====*/
@@ -73,6 +74,7 @@ int main(void)
   UnityBegin("test_tp3.c");
   RUN_TEST(test_inicializa_leds, 4);
   RUN_TEST(test_inicializa_rtc, 10);
+  RUN_TEST(test_leds_de_inicio, 21);
 
   return suite_teardown(UnityEnd());
 }

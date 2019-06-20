@@ -6,4 +6,4 @@
 #define	NO_CONECTA	2
 
 void leds_inicia(uint16_t * puerto);
-bool rtc_virtual_inicia(uint8_t);
+bool rtc_virtual_inicia(uint8_t estado, uint16_t * puerto);
