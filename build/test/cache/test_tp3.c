@@ -3,6 +3,8 @@
 #include "unity.h"
 
 
+
+
 void test_inicializa_leds(void){
 
  uint16_t puerto_virtual = 0xffff;
@@ -13,8 +15,28 @@ void test_inicializa_leds(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(7), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(8), UNITY_DISPLAY_STYLE_INT);
+
+}
 
 
+
+void test_inicializa_rtc(void){
+
+ uint16_t puerto_virtual = 0x0000;
+
+ 
+
+_Bool 
+
+     value=0;
+
+ value = rtc_inicia();
+
+ UnityAssertEqualNumber((UNITY_INT)((1)), (UNITY_INT)((value)), (
+
+((void *)0)
+
+), (UNITY_UINT)(15), UNITY_DISPLAY_STYLE_INT);
 
 }
