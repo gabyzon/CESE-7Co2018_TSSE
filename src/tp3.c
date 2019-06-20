@@ -1,16 +1,23 @@
 #include "tp3.h"
 
 
-bool val;
-
-void leds_create(uint16_t * puerto){
+void leds_inicia(uint16_t * puerto){
 	*puerto = 0x0000;
 }
 
 
-bool rtc_inicia(void){
-	/* Estructura RTC */
-	//rtc_t rtc;
-	/* Inicializar RTC */
-	//val = rtcConfig( &rtc );
+bool rtc_virtual_inicia(uint8_t estado){
+
+	bool val;
+	
+	// Si hago el que rtc inicie correctamente
+	if(estado == CONECTA){
+		val = 1;
+	}
+	
+	// Si hago el que rtc no inicie correctamente
+	if(estado == NO_CONECTA){
+		val = 0;
+	}
+	return val;
 }

@@ -71,8 +71,8 @@ int main(void)
 {
   suite_setup();
   UnityBegin("test_tp3.c");
-  RUN_TEST(test_inicializa_leds, 5);
-  RUN_TEST(test_inicializa_rtc, 11);
+  RUN_TEST(test_inicializa_leds, 4);
+  RUN_TEST(test_inicializa_rtc, 10);
 
   return suite_teardown(UnityEnd());
 }

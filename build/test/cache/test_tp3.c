@@ -3,19 +3,17 @@
 #include "unity.h"
 
 
-
-
 void test_inicializa_leds(void){
 
  uint16_t puerto_virtual = 0xffff;
 
- leds_create(&puerto_virtual);
+ leds_inicia(&puerto_virtual);
 
  UnityAssertEqualNumber((UNITY_INT)((0x0000)), (UNITY_INT)((puerto_virtual)), (
 
 ((void *)0)
 
-), (UNITY_UINT)(8), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(7), UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -31,12 +29,24 @@ _Bool
 
      value=0;
 
- value = rtc_inicia();
+
+
+ value = rtc_virtual_inicia(1);
 
  UnityAssertEqualNumber((UNITY_INT)((1)), (UNITY_INT)((value)), (
 
 ((void *)0)
 
 ), (UNITY_UINT)(15), UNITY_DISPLAY_STYLE_INT);
+
+
+
+ value = rtc_virtual_inicia(2);
+
+ UnityAssertEqualNumber((UNITY_INT)((0)), (UNITY_INT)((value)), (
+
+((void *)0)
+
+), (UNITY_UINT)(18), UNITY_DISPLAY_STYLE_INT);
 
 }
