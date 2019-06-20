@@ -4,20 +4,17 @@
   :file: test_tp3.c
 :successes:
 - :test: test_inicializa_leds
-  :line: 4
-  :message: ''
-- :test: test_inicializa_rtc
-  :line: 10
+  :line: 5
   :message: ''
 :failures:
-- :test: test_leds_de_inicio
-  :line: 26
-  :message: Expected 1 Was 0
+- :test: test_inicializa_rtc
+  :line: 19
+  :message: Expected 0 Was 2
 :ignores: []
 :counts:
-  :total: 3
-  :passed: 2
+  :total: 2
+  :passed: 1
   :failed: 1
   :ignored: 0
 :stdout: []
-:time: 0.007268920999194961
+:time: 0.0011653700021270197
