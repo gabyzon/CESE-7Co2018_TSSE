@@ -228,13 +228,7 @@ void test_escritura_rtc(void){
 
 
 
-
-
-
-
-
-
- i2cWrite_CMockExpectAndReturn(115, I2C0, 0b1101000, transmitDataBuffer, 2, (1), 1);
+ i2cWrite_CMockExpectAndReturn(112, I2C0, 0b1101000, transmitDataBuffer, 2, (1), 1);
 
  val = rtc_escritura();
 
@@ -242,6 +236,20 @@ void test_escritura_rtc(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(117), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(114), UNITY_DISPLAY_STYLE_INT);
+
+
+
+
+
+ i2cWrite_CMockExpectAndReturn(117, I2C0, 0b1101000, transmitDataBuffer, 2, (1), 0);
+
+ val = rtc_escritura();
+
+ UnityAssertEqualNumber((UNITY_INT)((expectedStateFail)), (UNITY_INT)((val)), (
+
+((void *)0)
+
+), (UNITY_UINT)(119), UNITY_DISPLAY_STYLE_INT);
 
 }

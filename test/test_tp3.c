@@ -108,13 +108,15 @@ void test_escritura_rtc(void){
 	uint8_t expectedStateFail = 0;
 	static uint8_t transmitDataBuffer[2];
 	
-	//transmitDataBuffer[0] = 0x00;
-	//transmitDataBuffer[1] = 8;
-	
 	// Hago que la escritura sea exitosa
 	i2cWrite_ExpectAndReturn(I2C0, I2C_ADDRESS, transmitDataBuffer, 2, TRUE,1);
 	val = rtc_escritura();
 	TEST_ASSERT_EQUAL(expectedStateOk, val);
+	
+	// Hago que la escritura sea exitosa
+	i2cWrite_ExpectAndReturn(I2C0, I2C_ADDRESS, transmitDataBuffer, 2, TRUE,0);
+	val = rtc_escritura();
+	TEST_ASSERT_EQUAL(expectedStateFail, val);
 }
 
 
