@@ -1,4 +1,5 @@
 ---
 - unity.h
 - tp3.h
+- mock_sapi_i2c.h
 - build/temp/_test_tp3.c

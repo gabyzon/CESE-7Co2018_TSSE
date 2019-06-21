@@ -39,16 +39,17 @@
 - :rake_columns: '120'
 :defines:
   :test:
-  - &1 []
-  - TEST
-  - CPU=LPC4337
+  - &1
+    - CHIP_LPC43XX
+    - CORE_M4
   :test_preprocess:
   - *1
-  - TEST
   :release: []
   :release_preprocess: []
   :use_test_definition: false
-  :commmon: []
+  :commmon:
+  - CHIP_LPC43XX
+  - CORE_M4
 :libraries:
   :test:
   - &2 []

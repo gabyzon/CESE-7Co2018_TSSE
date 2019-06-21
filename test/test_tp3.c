@@ -1,6 +1,7 @@
 #include "unity.h"
 #include "tp3.h"
-//#include "mock_sapi.h"
+#include <stdbool.h>
+#include "mock_sapi_i2c.h"
 
 void test_inicializa_leds(void){
 	uint16_t puerto_virtual = 0xffff;
@@ -9,12 +10,34 @@ void test_inicializa_leds(void){
 }
 
 void test_inicializa_rtc(void){
-	uint16_t puerto_virtual = 0x0000;
-	bool value=0;
 	
-	value = rtc_inicia(CONECTA);
-	TEST_ASSERT_EQUAL(1, value);
+	uint8_t val;
+	uint8_t expectedStateOk = 1;
+	uint8_t expectedStateFail = 0;
 	
-	value = rtc_inicia(NO_CONECTA);
-	TEST_ASSERT_EQUAL(0, value);
+	// Si la comunicacion inicia correctamente
+	i2cInit_ExpectAndReturn(I2C0, I2C_RATE,1);
+	val = rtc_inicia();
+	TEST_ASSERT_EQUAL(expectedStateOk, val);
+	
+	// Si la comunicacion no inicia
+	i2cInit_ExpectAndReturn(I2C0, I2C_RATE,0);
+	val = rtc_inicia();
+	TEST_ASSERT_EQUAL(expectedStateFail, val);
+
 }
+
+void test_visualiza_inicio_rtc(void){
+	//uint16_t puerto_virtual = 0x0000;
+	//visualizar_inicio(&puerto_virtual);
+	
+	
+
+}
+
+
+
+
+
+
+

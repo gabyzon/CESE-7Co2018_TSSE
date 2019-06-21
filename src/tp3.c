@@ -1,16 +1,34 @@
 #include "tp3.h"
 
-bool val;
+bool val_init;
+
 
 void leds_inicia(uint16_t * puerto){
 	*puerto = 0x0000;
 }
 
 
-bool rtc_inicia(uint8_t estado){
+uint8_t rtc_inicia(void){
 	
-	/* Estructura RTC */
-	//rtc_t rtc;
-	//val = rtcConfig( &rtc );
+	// using I2C for communication
+	// starting the I2C bus
+    
+	val_init = i2cInit(I2C0, I2C_RATE);
+    // Si init = 1, el RTC se inició correctamente
+    // Si init = 0, hubo un error en la iniciación del RTC
+	
+	return val_init;
+}
 
+void visualizar_inicio(uint16_t * puerto){
+		
+	// Si la conexión es exitosa
+	if(val_init==1){
+		*puerto=0x0001;
+	}
+	// Si la conexión tiene error
+	if(val_init==0){
+		*puerto=0x0002;
+	}
+	
 }

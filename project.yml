@@ -34,18 +34,23 @@
   :support:
     - test/support
 
+
+
+
+
 :defines:
   # in order to add common defines:
-  #  1) remove the trailing [] from the :common: section
-  #  2) add entries to the :common: section (e.g. :test: has TEST defined)
-  :commmon: &common_defines []
+  # 1) remove the trailing [] from the :common: section
+  # 2) add entries to the :common: section (e.g. :test: has TEST defined)
+  :commmon: &common_defines
+  - CHIP_LPC43XX
+  - CORE_M4
   :test:
-    - *common_defines
-    - TEST
-    - CPU=LPC4337
+  - *common_defines
+  # - TEST
   :test_preprocess:
-    - *common_defines
-    - TEST
+  - *common_defines
+  # - TEST
 
 :cmock:
   :mock_prefix: mock_

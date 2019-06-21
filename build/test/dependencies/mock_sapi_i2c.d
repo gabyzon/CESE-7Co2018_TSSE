@@ -1,4 +1,9 @@
-build/test/out/c/tp3.o: src/tp3.c src/tp3.h \
+build/test/out/c/mock_sapi_i2c.o: build/test/mocks/mock_sapi_i2c.c \
+ /home/eliana/CIAA/embedded-ide-workspace/CESE-7Co2018_TSSE/TP3/tp3/vendor/ceedling/vendor/unity/src/unity.h \
+ /home/eliana/CIAA/embedded-ide-workspace/CESE-7Co2018_TSSE/TP3/tp3/vendor/ceedling/vendor/unity/src/unity_internals.h \
+ /home/eliana/CIAA/embedded-ide-workspace/CESE-7Co2018_TSSE/TP3/tp3/vendor/ceedling/vendor/cmock/src/cmock.h \
+ /home/eliana/CIAA/embedded-ide-workspace/CESE-7Co2018_TSSE/TP3/tp3/vendor/ceedling/vendor/cmock/src/cmock_internals.h \
+ build/test/mocks/mock_sapi_i2c.h \
  src/libs/sapi/sapi_v0.5.2/soc/peripherals/inc/sapi_i2c.h \
  src/libs/sapi/sapi_v0.5.2/base/inc/sapi_datatypes.h \
  src/libs/lpc_open/lpc_chip_43xx/inc/chip.h \

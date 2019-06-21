@@ -1,7 +1,9 @@
-build/test/out/c/test_tp3.o: test/test_tp3.c \
+build/test/out/c/mock_sapi.o: build/test/mocks/mock_sapi.c \
  /home/eliana/CIAA/embedded-ide-workspace/CESE-7Co2018_TSSE/TP3/tp3/vendor/ceedling/vendor/unity/src/unity.h \
  /home/eliana/CIAA/embedded-ide-workspace/CESE-7Co2018_TSSE/TP3/tp3/vendor/ceedling/vendor/unity/src/unity_internals.h \
- src/tp3.h src/libs/sapi/sapi_v0.5.2/soc/peripherals/inc/sapi_i2c.h \
+ /home/eliana/CIAA/embedded-ide-workspace/CESE-7Co2018_TSSE/TP3/tp3/vendor/ceedling/vendor/cmock/src/cmock.h \
+ /home/eliana/CIAA/embedded-ide-workspace/CESE-7Co2018_TSSE/TP3/tp3/vendor/ceedling/vendor/cmock/src/cmock_internals.h \
+ build/test/mocks/mock_sapi.h src/libs/sapi/sapi_v0.5.2/base/inc/sapi.h \
  src/libs/sapi/sapi_v0.5.2/base/inc/sapi_datatypes.h \
  src/libs/lpc_open/lpc_chip_43xx/inc/chip.h \
  src/libs/lpc_open/lpc_chip_43xx/inc/sys_config.h \
@@ -68,4 +70,54 @@ build/test/out/c/test_tp3.o: test/test_tp3.c \
  src/libs/lpc_open/boards/inc/board_api.h \
  src/libs/lpc_open/lpc_chip_43xx/inc/lpc_types.h \
  src/libs/sapi/sapi_v0.5.2/board/inc/sapi_peripheral_map.h \
- build/test/mocks/mock_sapi_i2c.h
+ src/libs/sapi/sapi_v0.5.2/base/inc/sapi_datatypes.h \
+ src/libs/sapi/sapi_v0.5.2/board/inc/sapi_board.h \
+ src/libs/sapi/sapi_v0.5.2/soc/peripherals/inc/sapi_tick.h \
+ src/libs/sapi/sapi_v0.5.2/soc/peripherals/inc/sapi_gpio.h \
+ src/libs/sapi/sapi_v0.5.2/soc/peripherals/inc/sapi_uart.h \
+ src/libs/sapi/sapi_v0.5.2/abstract_modules/inc/sapi_delay.h \
+ src/libs/sapi/sapi_v0.5.2/soc/peripherals/inc/sapi_adc.h \
+ src/libs/sapi/sapi_v0.5.2/soc/peripherals/inc/sapi_dac.h \
+ src/libs/sapi/sapi_v0.5.2/soc/peripherals/inc/sapi_i2c.h \
+ src/libs/sapi/sapi_v0.5.2/soc/peripherals/inc/sapi_spi.h \
+ src/libs/sapi/sapi_v0.5.2/soc/peripherals/inc/sapi_rtc.h \
+ src/libs/sapi/sapi_v0.5.2/soc/core/inc/sapi_sleep.h \
+ src/libs/sapi/sapi_v0.5.2/soc/core/inc/sapi_cyclesCounter.h \
+ src/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/inc/sapi_usb_device.h \
+ src/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/inc/usbd_keyboard.h \
+ src/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/inc/lpc_app_usbd_cfg.h \
+ src/libs/lpc_open/lpc_chip_43xx/inc/error.h \
+ src/libs/lpc_open/lpc_chip_43xx/usbd_rom/usbd_rom_api.h \
+ src/libs/lpc_open/lpc_chip_43xx/usbd_rom/usbd.h \
+ src/libs/lpc_open/lpc_chip_43xx/usbd_rom/usbd_hw.h \
+ src/libs/lpc_open/lpc_chip_43xx/usbd_rom/usbd_core.h \
+ src/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/inc/lpc_app_usbd_cfg.h \
+ src/libs/lpc_open/lpc_chip_43xx/usbd_rom/usbd_mscuser.h \
+ src/libs/lpc_open/lpc_chip_43xx/usbd_rom/usbd_msc.h \
+ src/libs/lpc_open/lpc_chip_43xx/usbd_rom/usbd_dfuuser.h \
+ src/libs/lpc_open/lpc_chip_43xx/usbd_rom/usbd_dfu.h \
+ src/libs/lpc_open/lpc_chip_43xx/usbd_rom/usbd_hiduser.h \
+ src/libs/lpc_open/lpc_chip_43xx/usbd_rom/usbd_hid.h \
+ src/libs/lpc_open/lpc_chip_43xx/usbd_rom/usbd_cdcuser.h \
+ src/libs/lpc_open/lpc_chip_43xx/usbd_rom/usbd_cdc.h \
+ src/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/inc/cdc_uart.h \
+ src/libs/sapi/sapi_v0.5.2/abstract_modules/inc/sapi_stdio.h \
+ src/libs/sapi/sapi_v0.5.2/abstract_modules/inc/sapi_print.h \
+ src/libs/sapi/sapi_v0.5.2/abstract_modules/inc/sapi_convert.h \
+ src/libs/sapi/sapi_v0.5.2/abstract_modules/inc/sapi_debugPrint.h \
+ src/libs/sapi/sapi_v0.5.2/abstract_modules/inc/sapi_print.h \
+ src/libs/sapi/sapi_v0.5.2/abstract_modules/inc/sapi_consolePrint.h \
+ src/libs/sapi/sapi_v0.5.2/abstract_modules/inc/sapi_convert.h \
+ src/libs/sapi/sapi_v0.5.2/soc/peripherals/inc/sapi_pwm.h \
+ src/libs/sapi/sapi_v0.5.2/abstract_modules/inc/sapi_circularBuffer.h \
+ src/libs/sapi/sapi_v0.5.2/external_peripherals/inc/sapi_7_segment_display.h \
+ src/libs/sapi/sapi_v0.5.2/external_peripherals/inc/sapi_keypad.h \
+ src/libs/sapi/sapi_v0.5.2/external_peripherals/inc/sapi_dht11.h \
+ src/libs/sapi/sapi_v0.5.2/external_peripherals/inc/sapi_lcd.h \
+ src/libs/sapi/sapi_v0.5.2/external_peripherals/inc/sapi_servo.h \
+ src/libs/sapi/sapi_v0.5.2/external_peripherals/inc/sapi_rgb.h \
+ src/libs/sapi/sapi_v0.5.2/external_peripherals/inc/sapi_esp8266.h \
+ src/libs/sapi/sapi_v0.5.2/external_peripherals/inc/sapi_magnetometer_hmc5883l.h \
+ src/libs/sapi/sapi_v0.5.2/external_peripherals/inc/sapi_magnetometer_qmc5883l.h \
+ src/libs/sapi/sapi_v0.5.2/external_peripherals/inc/sapi_imu_mpu9250.h \
+ src/libs/sapi/sapi_v0.5.2/external_peripherals/inc/sapi_ultrasonic_hcsr04.h

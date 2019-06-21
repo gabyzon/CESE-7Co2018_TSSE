@@ -1,10 +1,10 @@
 #include "stdint.h"
 #include <stdbool.h>
-//#include <string.h>
-//#include "sapi.h"
+#include <string.h>
+#include "sapi_i2c.h"
 
-#define	CONECTA		1
-#define	NO_CONECTA	2
+#define I2C_RATE         100000
 
 void leds_inicia(uint16_t * puerto);
-bool rtc_inicia(uint8_t estado);
+uint8_t rtc_inicia(void);
+void visualizar_inicio(uint16_t * puerto);
