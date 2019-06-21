@@ -70,9 +70,25 @@ void test_visualiza_inicio_rtc(void){
 
 
 
+ uint16_t puerto_virtual = 0x0000;
+
+ uint8_t val;
 
 
 
+
+
+ i2cInit_CMockExpectAndReturn(36, I2C0, 100000, 1);
+
+ val = rtc_inicia();
+
+ visualizar_inicio(&puerto_virtual);
+
+ UnityAssertEqualNumber((UNITY_INT)((0x0002)), (UNITY_INT)((puerto_virtual)), (
+
+((void *)0)
+
+), (UNITY_UINT)(39), UNITY_DISPLAY_STYLE_INT);
 
 
 
