@@ -58,6 +58,11 @@ void test_lectura_rtc(void){
 	// Hago que la lectura sea exitosa
 	i2cRead_ExpectAndReturn( I2C0, I2C_ADDRESS, &dataToReadBuffer,1,TRUE,&receiveDataBuffer,1,TRUE, 1);
 	val = rtc_lectura();
+	TEST_ASSERT_EQUAL(expectedStateOk, val);
+	
+	// Hago que la lectura sea erronea
+	i2cRead_ExpectAndReturn( I2C0, I2C_ADDRESS, &dataToReadBuffer,1,TRUE,&receiveDataBuffer,1,TRUE, -1);
+	val = rtc_lectura();
 	TEST_ASSERT_EQUAL(expectedStateFail, val);
 	
 }

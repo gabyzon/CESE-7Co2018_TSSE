@@ -14,8 +14,8 @@
   :message: ''
 :failures:
 - :test: test_lectura_rtc
-  :line: 61
-  :message: Expected 0 Was 1
+  :line: 66
+  :message: Expected 0 Was 255
 :ignores: []
 :counts:
   :total: 4
@@ -23,4 +23,4 @@
   :failed: 1
   :ignored: 0
 :stdout: []
-:time: 0.0011035459974664263
+:time: 0.0010113800017279573
