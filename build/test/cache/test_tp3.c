@@ -4,8 +4,6 @@
 #include "unity.h"
 
 
-
-
 void test_inicializa_leds(void){
 
  uint16_t puerto_virtual = 0xffff;
@@ -16,7 +14,7 @@ void test_inicializa_leds(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(9), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(21), UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -36,7 +34,7 @@ void test_inicializa_rtc(void){
 
 
 
- i2cInit_CMockExpectAndReturn(19, I2C0, 100000, 1);
+ i2cInit_CMockExpectAndReturn(31, I2C0, 100000, 1);
 
  val = rtc_inicia();
 
@@ -44,13 +42,13 @@ void test_inicializa_rtc(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(21), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(33), UNITY_DISPLAY_STYLE_INT);
 
 
 
 
 
- i2cInit_CMockExpectAndReturn(24, I2C0, 100000, 0);
+ i2cInit_CMockExpectAndReturn(36, I2C0, 100000, 0);
 
  val = rtc_inicia();
 
@@ -58,7 +56,7 @@ void test_inicializa_rtc(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(26), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(38), UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -78,7 +76,7 @@ void test_visualiza_inicio_rtc(void){
 
 
 
- i2cInit_CMockExpectAndReturn(36, I2C0, 100000, 1);
+ i2cInit_CMockExpectAndReturn(48, I2C0, 100000, 1);
 
  val = rtc_inicia();
 
@@ -88,13 +86,13 @@ void test_visualiza_inicio_rtc(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(39), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(51), UNITY_DISPLAY_STYLE_INT);
 
 
 
 
 
- i2cInit_CMockExpectAndReturn(42, I2C0, 100000, 0);
+ i2cInit_CMockExpectAndReturn(54, I2C0, 100000, 0);
 
  val = rtc_inicia();
 
@@ -104,7 +102,7 @@ void test_visualiza_inicio_rtc(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(45), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(57), UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -132,7 +130,7 @@ void test_lectura_rtc(void){
 
 
 
- i2cRead_CMockExpectAndReturn(59, I2C0, 0b1101000, &dataToReadBuffer, 1, (1), &receiveDataBuffer, 1, (1), 1);
+ i2cRead_CMockExpectAndReturn(71, I2C0, 0b1101000, &dataToReadBuffer, 1, (1), &receiveDataBuffer, 1, (1), 1);
 
  val = rtc_lectura();
 
@@ -140,13 +138,13 @@ void test_lectura_rtc(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(61), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(73), UNITY_DISPLAY_STYLE_INT);
 
 
 
 
 
- i2cRead_CMockExpectAndReturn(64, I2C0, 0b1101000, &dataToReadBuffer, 1, (1), &receiveDataBuffer, 1, (1), 0);
+ i2cRead_CMockExpectAndReturn(76, I2C0, 0b1101000, &dataToReadBuffer, 1, (1), &receiveDataBuffer, 1, (1), 0);
 
  val = rtc_lectura();
 
@@ -154,7 +152,7 @@ void test_lectura_rtc(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(66), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(78), UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -180,7 +178,7 @@ void test_visualiza_lectura_rtc(void){
 
 
 
- i2cRead_CMockExpectAndReturn(79, I2C0, 0b1101000, &dataToReadBuffer, 1, (1), &receiveDataBuffer, 1, (1), 1);
+ i2cRead_CMockExpectAndReturn(91, I2C0, 0b1101000, &dataToReadBuffer, 1, (1), &receiveDataBuffer, 1, (1), 1);
 
  val = rtc_lectura();
 
@@ -190,13 +188,13 @@ void test_visualiza_lectura_rtc(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(82), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(94), UNITY_DISPLAY_STYLE_INT);
 
 
 
 
 
- i2cRead_CMockExpectAndReturn(85, I2C0, 0b1101000, &dataToReadBuffer, 1, (1), &receiveDataBuffer, 1, (1), 0);
+ i2cRead_CMockExpectAndReturn(97, I2C0, 0b1101000, &dataToReadBuffer, 1, (1), &receiveDataBuffer, 1, (1), 0);
 
  val = rtc_lectura();
 
@@ -206,8 +204,44 @@ void test_visualiza_lectura_rtc(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(88), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(100), UNITY_DISPLAY_STYLE_INT);
 
 
+
+}
+
+
+
+void test_escritura_rtc(void){
+
+
+
+ static uint8_t val;
+
+ uint8_t expectedStateOk = 1;
+
+ uint8_t expectedStateFail = 0;
+
+ static uint8_t transmitDataBuffer[2];
+
+
+
+
+
+
+
+
+
+
+
+ i2cWrite_CMockExpectAndReturn(115, I2C0, 0b1101000, transmitDataBuffer, 2, (1), 1);
+
+ val = rtc_escritura();
+
+ UnityAssertEqualNumber((UNITY_INT)((expectedStateOk)), (UNITY_INT)((val)), (
+
+((void *)0)
+
+), (UNITY_UINT)(117), UNITY_DISPLAY_STYLE_INT);
 
 }

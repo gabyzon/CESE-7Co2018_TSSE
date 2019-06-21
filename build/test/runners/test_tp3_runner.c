@@ -46,6 +46,7 @@ extern void test_inicializa_rtc(void);
 extern void test_visualiza_inicio_rtc(void);
 extern void test_lectura_rtc(void);
 extern void test_visualiza_lectura_rtc(void);
+extern void test_escritura_rtc(void);
 
 
 /*=======Mock Management=====*/
@@ -100,11 +101,12 @@ int main(void)
 {
   suite_setup();
   UnityBegin("test_tp3.c");
-  RUN_TEST(test_inicializa_leds, 6);
-  RUN_TEST(test_inicializa_rtc, 12);
-  RUN_TEST(test_visualiza_inicio_rtc, 30);
-  RUN_TEST(test_lectura_rtc, 48);
-  RUN_TEST(test_visualiza_lectura_rtc, 70);
+  RUN_TEST(test_inicializa_leds, 18);
+  RUN_TEST(test_inicializa_rtc, 24);
+  RUN_TEST(test_visualiza_inicio_rtc, 42);
+  RUN_TEST(test_lectura_rtc, 60);
+  RUN_TEST(test_visualiza_lectura_rtc, 82);
+  RUN_TEST(test_escritura_rtc, 104);
 
   CMock_Guts_MemFreeFinal();
   return suite_teardown(UnityEnd());

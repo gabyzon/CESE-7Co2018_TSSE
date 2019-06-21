@@ -2,6 +2,7 @@
 
 uint8_t val_init;
 uint8_t read;
+uint8_t write;
 
 
 void leds_inicia(uint16_t * puerto){
@@ -57,3 +58,22 @@ void visualizar_lectura(uint16_t * puerto){
 	}
 	
 }
+
+uint8_t rtc_escritura(void){
+	
+    uint8_t transmitDataBuffer[2];
+
+    /*  La lectura se efectua en tres pasos
+     *  1. Cargo en buffer[0] la dirección del registro a 
+     *  2. Cargo en el buffer[1] la información a escribir
+     *  3. Grabo en el registro buffer[0] la información de buffer[1]       
+	 */
+	transmitDataBuffer[0] = 0x00;
+	transmitDataBuffer[1] = 8;
+    write = i2cWrite(I2C0, I2C_ADDRESS, transmitDataBuffer, 2, TRUE);	
+
+	return write;
+}
+
+
+
