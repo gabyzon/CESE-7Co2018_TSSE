@@ -12,12 +12,15 @@
 - :test: test_visualiza_inicio_rtc
   :line: 30
   :message: ''
-:failures: []
+:failures:
+- :test: test_lectura_rtc
+  :line: 51
+  :message: Falla
 :ignores: []
 :counts:
-  :total: 3
+  :total: 4
   :passed: 3
-  :failed: 0
+  :failed: 1
   :ignored: 0
 :stdout: []
-:time: 0.0010208980020252056
+:time: 0.0010550489969318733

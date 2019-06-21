@@ -45,6 +45,13 @@ void test_visualiza_inicio_rtc(void){
 	TEST_ASSERT_EQUAL(0x0002, puerto_virtual);
 }
 
+void test_lectura_rtc(void){
+	
+	uint8_t val;
+	TEST_FAIL_MESSAGE("Falla");
+}
+
+
 
 
 

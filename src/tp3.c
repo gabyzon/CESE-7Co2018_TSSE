@@ -22,13 +22,15 @@ uint8_t rtc_inicia(void){
 
 void visualizar_inicio(uint16_t * puerto){
 		
-	// Si la conexión es exitosa
+	// Si la conexión es exitosa enciende el primer led
 	if(val_init==1){
 		*puerto=0x0001;
 	}
-	// Si la conexión tiene error
+	// Si la conexión tiene error enciende el segundo led
 	if(val_init==0){
 		*puerto=0x0002;
 	}
 	
 }
+
+

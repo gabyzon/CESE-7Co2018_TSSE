@@ -107,3 +107,15 @@ void test_visualiza_inicio_rtc(void){
 ), (UNITY_UINT)(45), UNITY_DISPLAY_STYLE_INT);
 
 }
+
+
+
+void test_lectura_rtc(void){
+
+
+
+ uint8_t val;
+
+ UnityFail( (("Falla")), (UNITY_UINT)(51));
+
+}

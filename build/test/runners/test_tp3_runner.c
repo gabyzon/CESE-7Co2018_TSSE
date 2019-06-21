@@ -44,6 +44,7 @@ extern void tearDown(void);
 extern void test_inicializa_leds(void);
 extern void test_inicializa_rtc(void);
 extern void test_visualiza_inicio_rtc(void);
+extern void test_lectura_rtc(void);
 
 
 /*=======Mock Management=====*/
@@ -101,6 +102,7 @@ int main(void)
   RUN_TEST(test_inicializa_leds, 6);
   RUN_TEST(test_inicializa_rtc, 12);
   RUN_TEST(test_visualiza_inicio_rtc, 30);
+  RUN_TEST(test_lectura_rtc, 48);
 
   CMock_Guts_MemFreeFinal();
   return suite_teardown(UnityEnd());
