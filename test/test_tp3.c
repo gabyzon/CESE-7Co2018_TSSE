@@ -38,11 +38,11 @@ void test_visualiza_inicio_rtc(void){
 	visualizar_inicio(&puerto_virtual);
 	TEST_ASSERT_EQUAL(0x0001, puerto_virtual);
 	
-	// Hago que la conexión sea erronea y no enciendan leds
+	// Hago que la conexión sea erronea y enciende led 1
 	i2cInit_ExpectAndReturn(I2C0, I2C_RATE,0);
 	val = rtc_inicia();
 	visualizar_inicio(&puerto_virtual);
-	TEST_ASSERT_EQUAL(0x0000, puerto_virtual);
+	TEST_ASSERT_EQUAL(0x0001, puerto_virtual);
 }
 
 
