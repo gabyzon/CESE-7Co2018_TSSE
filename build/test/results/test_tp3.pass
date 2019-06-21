@@ -4,29 +4,32 @@
   :file: test_tp3.c
 :successes:
 - :test: test_inicializa_leds
-  :line: 18
+  :line: 20
   :message: ''
 - :test: test_inicializa_rtc
-  :line: 24
+  :line: 26
   :message: ''
 - :test: test_visualiza_inicio_rtc
-  :line: 42
+  :line: 44
   :message: ''
 - :test: test_lectura_rtc
-  :line: 60
+  :line: 62
   :message: ''
 - :test: test_visualiza_lectura_rtc
-  :line: 82
+  :line: 84
   :message: ''
 - :test: test_escritura_rtc
-  :line: 104
+  :line: 106
+  :message: ''
+- :test: test_visualiza_escritura_rtc
+  :line: 124
   :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 6
-  :passed: 6
+  :total: 7
+  :passed: 7
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.0009991359984269366
+:time: 0.001021003998175729

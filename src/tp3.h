@@ -12,3 +12,4 @@ void visualizar_inicio(uint16_t * puerto);
 uint8_t rtc_lectura(void);
 void visualizar_lectura(uint16_t * puerto);
 uint8_t rtc_escritura(void);
+void visualizar_escritura(uint16_t * puerto);

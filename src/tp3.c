@@ -75,5 +75,17 @@ uint8_t rtc_escritura(void){
 	return write;
 }
 
+void visualizar_escritura(uint16_t * puerto){
+	
+	// Si la lectura es exitosa enciende el quinto led
+	if(write==1){
+		*puerto=0x0010;
+	}
+	// Si la conexión tiene error enciende el sexto led
+	if(write==0){
+		*puerto=0x0020;
+	}
+	
+}
 
 

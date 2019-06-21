@@ -6,13 +6,15 @@
 /*
 *       TEST A REALIZARSE
 * 1. Al inicio todos los leds están apagados
-* 2. Verificar la correcta inicalizacion de la comunicacion con el RTC (vía I2C)
+* 2. Verificar la correcta o incorrecta inicalizacion de la comunicacion con el RTC (vía I2C)
 * 3. Si la inicializacion es exitosa, encender primer led del puerto_virtual
 *    Si la inicializacion es erronea, encender segundo led del puerto_virtual
-* 4. Verificar la correcta lectura del dato del RTC (via I2C)
+* 4. Verificar la correcta o incorrecta lectura del dato del RTC (via I2C)
 * 5. Si la lectura es exitosa, encender tercer led del puerto_virtual  
 *    Si la lectura es erronea, encender cuarto led del puerto_virtual 
-*
+* 6. Verificar la correcta o incorrecta escritura del dato del RTC (via I2C)
+* 7. Si la escritura es exitosa, encender quinto led del puerto_virtual  
+*    Si la escritura es erronea, encender sexto led del puerto_virtual 
 */
 
 void test_inicializa_leds(void){
@@ -119,6 +121,25 @@ void test_escritura_rtc(void){
 	TEST_ASSERT_EQUAL(expectedStateFail, val);
 }
 
+void test_visualiza_escritura_rtc(void){
 
+	uint16_t puerto_virtual = 0x0000;
+	static uint8_t val;
+	
+	static uint8_t transmitDataBuffer[2];
+	
+	// Hago que la lectura sea exitosa y enciende quinto led
+	i2cWrite_ExpectAndReturn( I2C0, I2C_ADDRESS, transmitDataBuffer, 2, TRUE, 1 );
+	val = rtc_escritura(); // Ejecuto la lectura.
+	visualizar_escritura(&puerto_virtual);
+	TEST_ASSERT_EQUAL(0x0010, puerto_virtual);
+
+	// Hago que la lectura sea erronea y enciende el sexto led.
+	i2cWrite_ExpectAndReturn( I2C0, I2C_ADDRESS, transmitDataBuffer, 2, TRUE, 0 );
+	val = rtc_escritura(); // Ejecuto la lectura.
+	visualizar_escritura(&puerto_virtual);
+	TEST_ASSERT_EQUAL(0x0020, puerto_virtual);
+
+}
 
 
