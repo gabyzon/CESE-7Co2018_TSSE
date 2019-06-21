@@ -194,4 +194,20 @@ void test_visualiza_lectura_rtc(void){
 
 
 
+
+
+ i2cRead_CMockExpectAndReturn(85, I2C0, 0b1101000, &dataToReadBuffer, 1, (1), &receiveDataBuffer, 1, (1), 0);
+
+ val = rtc_lectura();
+
+ visualizar_lectura(&puerto_virtual);
+
+ UnityAssertEqualNumber((UNITY_INT)((0x0004)), (UNITY_INT)((puerto_virtual)), (
+
+((void *)0)
+
+), (UNITY_UINT)(88), UNITY_DISPLAY_STYLE_INT);
+
+
+
 }
