@@ -32,13 +32,17 @@ void test_visualiza_inicio_rtc(void){
 	uint16_t puerto_virtual = 0x0000;
 	uint8_t val;
 	
-	// Hago que la conexión sea exitosa y encienda el led 2
+	// Hago que la conexión sea exitosa
 	i2cInit_ExpectAndReturn(I2C0, I2C_RATE,1);
 	val = rtc_inicia();
 	visualizar_inicio(&puerto_virtual);
 	TEST_ASSERT_EQUAL(0x0001, puerto_virtual);
 	
-	
+	// Hago que la conexión sea erronea y no enciendan leds
+	i2cInit_ExpectAndReturn(I2C0, I2C_RATE,0);
+	val = rtc_inicia();
+	visualizar_inicio(&puerto_virtual);
+	TEST_ASSERT_EQUAL(0x0000, puerto_virtual);
 }
 
 
