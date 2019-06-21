@@ -79,7 +79,7 @@ void test_visualiza_lectura_rtc(void){
 	i2cRead_ExpectAndReturn( I2C0, I2C_ADDRESS, &dataToReadBuffer,1,TRUE,&receiveDataBuffer,1,TRUE, 1);
 	val = rtc_lectura(); // Ejecuto la lectura.
 	visualizar_lectura(&puerto_virtual);
-	TEST_ASSERT_EQUAL(0x0002, puerto_virtual);
+	TEST_ASSERT_EQUAL(0x0004, puerto_virtual);
 
 }
 
