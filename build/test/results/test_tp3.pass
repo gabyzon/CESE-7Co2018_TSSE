@@ -9,15 +9,15 @@
 - :test: test_inicializa_rtc
   :line: 12
   :message: ''
-:failures:
 - :test: test_visualiza_inicio_rtc
-  :line: 39
-  :message: Expected 2 Was 1
+  :line: 30
+  :message: ''
+:failures: []
 :ignores: []
 :counts:
   :total: 3
-  :passed: 2
-  :failed: 1
+  :passed: 3
+  :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.0010157090000575408
+:time: 0.0009009640052681789

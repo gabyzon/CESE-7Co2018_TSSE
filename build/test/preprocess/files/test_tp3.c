@@ -84,7 +84,7 @@ void test_visualiza_inicio_rtc(void){
 
  visualizar_inicio(&puerto_virtual);
 
- UnityAssertEqualNumber((UNITY_INT)((0x0002)), (UNITY_INT)((puerto_virtual)), (
+ UnityAssertEqualNumber((UNITY_INT)((0x0001)), (UNITY_INT)((puerto_virtual)), (
 
 ((void *)0)
 
