@@ -15,12 +15,15 @@
 - :test: test_lectura_rtc
   :line: 48
   :message: ''
-:failures: []
+:failures:
+- :test: test_visualiza_lectura_rtc
+  :line: 82
+  :message: Expected 2 Was 4
 :ignores: []
 :counts:
-  :total: 4
+  :total: 5
   :passed: 4
-  :failed: 0
+  :failed: 1
   :ignored: 0
 :stdout: []
-:time: 0.0010987620044033974
+:time: 0.0010192690024268813

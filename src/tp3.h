@@ -10,3 +10,4 @@ void leds_inicia(uint16_t * puerto);
 uint8_t rtc_inicia(void);
 void visualizar_inicio(uint16_t * puerto);
 uint8_t rtc_lectura(void);
+void visualizar_lectura(uint16_t * puerto);

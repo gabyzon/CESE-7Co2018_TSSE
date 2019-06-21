@@ -1,6 +1,7 @@
 #include "tp3.h"
 
-bool val_init;
+uint8_t val_init;
+uint8_t read;
 
 
 void leds_inicia(uint16_t * puerto){
@@ -35,7 +36,6 @@ void visualizar_inicio(uint16_t * puerto){
 
 uint8_t rtc_lectura(void){
 	
-	uint8_t read;
     uint8_t dataToReadBuffer;
     uint8_t receiveDataBuffer;
 	
@@ -45,3 +45,15 @@ uint8_t rtc_lectura(void){
 	return read;
 }
 
+void visualizar_lectura(uint16_t * puerto){
+	
+	// Si la lectura es exitosa enciende el tercer led
+	if(read==1){
+		*puerto=0x0004;
+	}
+	// Si la conexión tiene error enciende el cuarto led
+	if(read==0){
+		*puerto=0x0008;
+	}
+	
+}
