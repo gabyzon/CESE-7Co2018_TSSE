@@ -202,7 +202,7 @@ void test_visualiza_lectura_rtc(void){
 
  visualizar_lectura(&puerto_virtual);
 
- UnityAssertEqualNumber((UNITY_INT)((0x0004)), (UNITY_INT)((puerto_virtual)), (
+ UnityAssertEqualNumber((UNITY_INT)((0x0008)), (UNITY_INT)((puerto_virtual)), (
 
 ((void *)0)
 

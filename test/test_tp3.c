@@ -3,6 +3,18 @@
 #include <stdbool.h>
 #include "mock_sapi_i2c.h"
 
+/*
+*       TEST A REALIZARSE
+* 1. Al inicio todos los leds están apagados
+* 2. Verificar la correcta inicalizacion de la comunicacion con el RTC (vía I2C)
+* 3. Si la inicializacion es exitosa, encender primer led del puerto_virtual
+*    Si la inicializacion es erronea, encender segundo led del puerto_virtual
+* 4. Verificar la correcta lectura del dato del RTC (via I2C)
+* 5. Si la lectura es exitosa, encender tercer led del puerto_virtual  
+*    Si la lectura es erronea, encender cuarto led del puerto_virtual 
+*
+*/
+
 void test_inicializa_leds(void){
 	uint16_t puerto_virtual = 0xffff;
 	leds_inicia(&puerto_virtual);
@@ -75,17 +87,17 @@ void test_visualiza_lectura_rtc(void){
 	static uint8_t dataToReadBuffer;
     static uint8_t receiveDataBuffer;
 	
-	// Hago que la lectura sea exitosa y enciende led 4
+	// Hago que la lectura sea exitosa y enciende tercer led
 	i2cRead_ExpectAndReturn( I2C0, I2C_ADDRESS, &dataToReadBuffer,1,TRUE,&receiveDataBuffer,1,TRUE, 1);
 	val = rtc_lectura(); // Ejecuto la lectura.
 	visualizar_lectura(&puerto_virtual);
 	TEST_ASSERT_EQUAL(0x0004, puerto_virtual);
 
-	// Hago que la lectura sea erronea y enciende led 3
+	// Hago que la lectura sea erronea y enciende el cuarto led.
 	i2cRead_ExpectAndReturn( I2C0, I2C_ADDRESS, &dataToReadBuffer,1,TRUE,&receiveDataBuffer,1,TRUE, 0);
 	val = rtc_lectura(); // Ejecuto la lectura.
 	visualizar_lectura(&puerto_virtual);
-	TEST_ASSERT_EQUAL(0x0004, puerto_virtual);
+	TEST_ASSERT_EQUAL(0x0008, puerto_virtual);
 
 }
 
