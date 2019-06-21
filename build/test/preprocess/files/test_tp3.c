@@ -146,7 +146,7 @@ void test_lectura_rtc(void){
 
 
 
- i2cRead_CMockExpectAndReturn(64, I2C0, 0b1101000, &dataToReadBuffer, 1, (1), &receiveDataBuffer, 1, (1), -1);
+ i2cRead_CMockExpectAndReturn(64, I2C0, 0b1101000, &dataToReadBuffer, 1, (1), &receiveDataBuffer, 1, (1), 0);
 
  val = rtc_lectura();
 
