@@ -81,7 +81,7 @@ void test_visualiza_lectura_rtc(void){
 	visualizar_lectura(&puerto_virtual);
 	TEST_ASSERT_EQUAL(0x0004, puerto_virtual);
 
-	// Hago que la lectura sea erronea y enciende led 4
+	// Hago que la lectura sea erronea y enciende led 3
 	i2cRead_ExpectAndReturn( I2C0, I2C_ADDRESS, &dataToReadBuffer,1,TRUE,&receiveDataBuffer,1,TRUE, 0);
 	val = rtc_lectura(); // Ejecuto la lectura.
 	visualizar_lectura(&puerto_virtual);
