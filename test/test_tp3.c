@@ -11,7 +11,7 @@ void test_inicializa_leds(void){
 
 void test_inicializa_rtc(void){
 	
-	uint8_t val;
+	static uint8_t val;
 	uint8_t expectedStateOk = 1;
 	uint8_t expectedStateFail = 0;
 	
@@ -30,7 +30,7 @@ void test_inicializa_rtc(void){
 void test_visualiza_inicio_rtc(void){
 	
 	uint16_t puerto_virtual = 0x0000;
-	uint8_t val;
+	static uint8_t val;
 	
 	// Hago que la conexión sea exitosa y enciende led 1
 	i2cInit_ExpectAndReturn(I2C0, I2C_RATE,1);
@@ -47,8 +47,19 @@ void test_visualiza_inicio_rtc(void){
 
 void test_lectura_rtc(void){
 	
-	uint8_t val;
-	TEST_FAIL_MESSAGE("Falla");
+	static uint8_t val;
+	uint8_t expectedStateOk = 1;
+	uint8_t expectedStateFail = 0;
+
+    static uint8_t dataToReadBuffer;
+    static uint8_t receiveDataBuffer;
+	//dataToReadBuffer = 0x00; 
+	
+	// Hago que la lectura sea exitosa
+	i2cRead_ExpectAndReturn( I2C0, I2C_ADDRESS, &dataToReadBuffer,1,TRUE,&receiveDataBuffer,1,TRUE, 1);
+	val = rtc_lectura();
+	TEST_ASSERT_EQUAL(expectedStateFail, val);
+	
 }
 
 

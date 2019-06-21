@@ -26,7 +26,7 @@ void test_inicializa_rtc(void){
 
 
 
- uint8_t val;
+ static uint8_t val;
 
  uint8_t expectedStateOk = 1;
 
@@ -72,7 +72,7 @@ void test_visualiza_inicio_rtc(void){
 
  uint16_t puerto_virtual = 0x0000;
 
- uint8_t val;
+ static uint8_t val;
 
 
 
@@ -114,8 +114,34 @@ void test_lectura_rtc(void){
 
 
 
- uint8_t val;
+ static uint8_t val;
 
- UnityFail( (("Falla")), (UNITY_UINT)(51));
+ uint8_t expectedStateOk = 1;
+
+ uint8_t expectedStateFail = 0;
+
+
+
+    static uint8_t dataToReadBuffer;
+
+    static uint8_t receiveDataBuffer;
+
+
+
+
+
+
+
+ i2cRead_CMockExpectAndReturn(59, I2C0, 0b1101000, &dataToReadBuffer, 1, (1), &receiveDataBuffer, 1, (1), 1);
+
+ val = rtc_lectura();
+
+ UnityAssertEqualNumber((UNITY_INT)((expectedStateFail)), (UNITY_INT)((val)), (
+
+((void *)0)
+
+), (UNITY_UINT)(61), UNITY_DISPLAY_STYLE_INT);
+
+
 
 }

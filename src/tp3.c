@@ -33,4 +33,15 @@ void visualizar_inicio(uint16_t * puerto){
 	
 }
 
+uint8_t rtc_lectura(void){
+	
+	uint8_t read;
+    uint8_t dataToReadBuffer;
+    uint8_t receiveDataBuffer;
+	
+	dataToReadBuffer = 0x00; 
+	read = i2cRead( I2C0, I2C_ADDRESS, &dataToReadBuffer,1,TRUE,&receiveDataBuffer,1,TRUE);
+
+	return read;
+}
 
